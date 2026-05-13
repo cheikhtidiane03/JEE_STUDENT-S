@@ -18,11 +18,9 @@ public class EtudiantServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        System.out.println("bonjour : " + req.getPathInfo());
-
         String pathInfo = req.getPathInfo();
-
         if (pathInfo == null || pathInfo.equals("/")) {
+            System.out.println("bonjour : " + req.getPathInfo());
 
             List<Etudiant> etudiants = new ArrayList<>();
 
@@ -34,8 +32,16 @@ public class EtudiantServlet extends HttpServlet {
 
             req.setAttribute("etudiants", etudiants);
 
-            req.getRequestDispatcher("/WEB-INF/list.jsp")
-                    .forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/list.jsp").forward(req, resp);
+        }else {
+            System.out.println("bonjour : " + req.getPathInfo());
+            String[] params = req.getPathInfo().split("/");
+            if (params[params.length-1].equals("/add")) {
+                req.getRequestDispatcher("/WEB-INF/add.jsp").forward(req, resp);
+            }else if (params[params.length-1].equals("/edit")) {
+
+                req.getRequestDispatcher("/WEB-INF/edit.jsp").forward(req, resp);
+            }
         }
     }
 }

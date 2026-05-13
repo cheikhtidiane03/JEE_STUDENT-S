@@ -27,10 +27,11 @@
         <p> ${etudiant.getEmail()}</p>
     </c:forEach>
 
-    <h1>Bienvenue </h1>
+    <h1>Bienvenue Page Liste</h1>
 
-
-    <a href="etudiant/add"> Aller sur la page ajout</a>
+    <a href="etudiant/list"> Aller sur la liste</a>
+    <a href="etudiant/add"> Aller sur la page d'ajout</a>
+    <a href="etudiant/edit"> Aller sur la page edit</a>
 
 </body>
 </html>
