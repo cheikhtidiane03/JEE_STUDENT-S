@@ -36,9 +36,9 @@ public class EtudiantServlet extends HttpServlet {
         }else {
             System.out.println("bonjour : " + req.getPathInfo());
             String[] params = req.getPathInfo().split("/");
-            if (params[params.length-1].equals("/add")) {
+            if (params[params.length-1].equals("/add") || pathInfo.equals("/add")){
                 req.getRequestDispatcher("/WEB-INF/add.jsp").forward(req, resp);
-            }else if (params[params.length-1].equals("/edit")) {
+            }else if (params[params.length-1].equals("/edit") || pathInfo.equals("/edit")) {
 
                 req.getRequestDispatcher("/WEB-INF/edit.jsp").forward(req, resp);
             }

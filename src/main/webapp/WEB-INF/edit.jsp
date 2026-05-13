@@ -13,9 +13,15 @@
 <body>
     <h1>Page d'Edition</h1>
 
-    <a href="etudiant/list"> Aller sur la liste</a>
-    <a href="etudiant/add"> Aller sur la page d'ajout</a>
-    <a href="etudiant/edit"> Aller sur la page edit</a>
+    <a href="${pageContext.request.contextPath}/etudiant/">Aller sur la liste</a>
+
+    <a href="${pageContext.request.contextPath}/etudiant/add">
+        Aller sur la page d'ajout
+    </a>
+
+    <a href="${pageContext.request.contextPath}/etudiant/edit">
+        Aller sur la page edit
+    </a>
 
 
 </body>
